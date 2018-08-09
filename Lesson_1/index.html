@@ -4,13 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Lesson 2 - JavaScript 2 level</title>
+    <title>Lesson 1 - JavaScript 2 level</title>
     <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="coffe-machine.css">
 </head>
 <body>
     <header class="header">
 
     </header>
+
+    <div class="container">
+        <div class="cm-ui">
+            <button class="btn" id="start">Старт</button>
+            <button class="btn" id="stop">Стоп</button>
+            <hr>
+            <label for="amount">Воды</label>
+            <input type="number" id="amount" class="input">
+            <button class="btn" id="addWater">Добавит воды</button>
+            <hr>
+            <lebel for="grains">Зёрен</lebel>
+            <input type="number"  id="grains" class="input">
+            <button class="btn" id="addGrains">Добавит зёрен</button>
+            <hr>
+            <p id="info" class="info">Привет =)</p>
+            <hr>
+            <p id="counter"></p>
+        </div>
+    </div>
+
     <script src="menu.js"></script>
+    <script src="coffeeMachine.js"></script>
 </body>
 </html>
