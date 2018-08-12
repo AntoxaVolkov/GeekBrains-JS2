@@ -1,0 +1,177 @@
+.header{
+    padding: 40px 0;
+    width: 800px;
+    margin: 0 auto;
+}
+
+a:hover{
+    color: #568799;
+}
+
+.menu, .sub-menu{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu__item, .menu__sub-menu{
+    display: inline-block;
+    margin: 0 5px;
+    text-align: center;
+    border: 1px solid #6534dd;
+}
+
+.menu__item a{
+    display: inline-block;
+    padding: 5px 10px;
+}
+
+.menu__sub-menu{
+    position: relative;
+    cursor: pointer;
+}
+
+.menu__sub-menu span{ 
+    display: inline-block;
+    padding: 5px 10px;
+}
+
+.sub-menu .menu__sub-menu span{ 
+    display: inline-block;
+    padding: 10px 20px;
+}
+
+.menu__sub-menu:hover{
+    color: #568799;
+}
+
+.menu__sub-menu:hover > .sub-menu{
+    display: block;
+}
+
+.sub-menu{
+    display: none;
+    position: absolute;
+    background: rgb(177, 210, 219);
+}
+
+.sub-menu .sub-menu{
+    top: 0;
+    left: 100%;
+    background-color: rgb(222, 246, 253);
+}
+
+.sub-menu > .menu__item{
+    display: block;
+    text-align: left;
+    border: none;
+    margin: 0;
+}
+
+.sub-menu > .menu__item a{
+    padding: 10px 20px;
+}
+
+.sub-menu > .menu__sub-menu{
+    display: block;
+    text-align: left;
+    border: none;
+    position: static;
+}
+
+
+
+.container{
+    width: 900px;
+    margin: 0 auto;
+}
+.container:after{
+    display: block;
+    content: '';
+    clear: both;
+}
+
+.container__left{
+    width: 320px;
+    float: left;
+}
+
+.container__right{
+    width: 450px;
+    float: right;
+}
+
+.users{
+    border: 1px solid #ed45a3;
+    padding: 10px;
+}
+
+.btn{
+    width: 100%;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    border: 2px solid #564357;
+    background-color: #affedf;
+    color: #346423;
+    margin: 5px 0;
+}
+
+.btn:hover{
+    width: 100%;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    border: 2px solid #564357;
+    background-color: #cfffef;
+    color: #346423;
+    margin: 5px 0;
+}
+
+hr{
+    margin: 10px 0;
+}
+
+input{
+    padding: 5px 10px;
+    border: 2px solid #555;
+    color: #666;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+.notifications__info{
+    color: #13aa31
+}
+
+.notifications__error{
+    color: #ad3421;
+}
+
+.photos{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+}
+
+.photos a{
+    position: relative;
+    overflow: hidden;
+    width: 150px;
+    height: 150px;
+    z-index: 5;
+    transition: transform 0.5s;
+}
+
+.photos a:hover{
+    transform: scale(1.2);
+    z-index: 10; 
+}
+
+.photos img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    min-height: 100%;
+    min-width: 100%;
+}
