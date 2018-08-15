@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lesson 3 - JavaScript 2 level</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="first-task">
+        <h1>Задания 1-2</h1>
+        <div class="input">
+            <textarea name="text" id="text" cols="30" rows="10"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex ullam hic animi alias sed esse corporis voluptatibus ab reiciendis nihil. - 'I don't know, that will be written here'. Autem hic nesciunt omnis minus, exercitationem ipsum ad ab amet explicabo!</textarea>
+        </div>
+        <div class="action">
+            <button id="replaceFirst">Заменить V1</button>
+        </div>
+        <p class="output"></p>
+    </div>
+
+    <div class="second-task">
+        <form action="#" method="post">
+            <label for="#iName">Имя</label>
+            <input type="text" id="iName" pattern="^[a-zA-Zа-яА-ЯёЁ]+$" required>
+            <label for="#iTel">Телефон</label>
+            <input type="text" id="iTel" pattern="^\+7\(\d{3}\)\d{3}-\d{4}$" required>
+            <label for="#iEmail">Эл.Почта</label>
+            <input type="text" id="iEmail" pattern="^[a-zA-Z]+[.-]?[a-zA-Z]+@[a-zA-Z]+.[a-zA-Z]{2,4}$" required>
+            <label for="#iText">Текст</label>
+            <textarea name="mytext" id="iText" cols="30" rows="10"></textarea>
+            <input type="submit" value="">
+        </form>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
