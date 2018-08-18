@@ -1,0 +1,140 @@
+#app{
+    width: 600px;
+    margin: 40px auto;
+}
+
+.tabs__nav{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 10;
+}
+
+.tabs__nav-item{
+    display: inline-block;
+    background: rgb(103, 194, 247);
+    border-radius: 8px 8px 0 0;
+    border: 2px solid rgb(103, 194, 247);
+    transform: translateY(2px);
+}
+
+.tabs__nav-item.active{
+    background: #fff;
+    border-bottom: none;
+    padding-bottom: 4px;
+    
+}
+
+.tabs__nav-link{
+    display: inline-block;
+    padding: 5px 10px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.active .tabs__nav-link{
+    color: rgb(84, 169, 218);;
+}
+
+
+.tabs__list{
+    position: relative;
+    z-index: 5;
+    border: 2px solid rgb(103, 194, 247);
+    padding: 10px;
+    overflow-x: hidden;
+    overflow-y: unset;
+    display: flex;
+}
+
+.tabs__tab{
+    width: 100%;
+    flex-basis: 100%;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.slide-fade-enter-active {
+  transition: all .5s ease;
+}
+.slide-fade-leave-active {
+  transition: all 0.5s ease;
+  display: none;
+}
+.slide-fade-enter{
+    opacity: 0;
+}
+.slide-fade-enter-to{
+    opacity: 1;
+}
+
+.slide-fade-leave-to {
+  opacity: 0;
+}
+
+.slide-fade-leave {
+  opacity: 1;
+}
+
+.form{
+    width: 400px;
+    margin: 0 auto;
+}
+
+.form__field{
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.form__field input{
+    width: 100%;
+    padding: 5px 10px;
+    outline: none;
+    box-sizing: border-box;
+}
+.form__field label{
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+}
+.form__field textarea{
+    width: 100%;
+    resize: none;
+}
+
+.form__field--city{
+    position: relative;
+}
+
+.cities{
+    position: absolute;
+    top: 63px;
+    left: 10px;
+    right: 10px;
+    z-index: 20;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #fff;
+    max-height: 100px;
+    overflow-y: auto;
+    border: 1px solid #555;
+    box-sizing: border-box;
+}
+
+.cities__item{
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.cities__item:hover{
+    background-color: rgb(160, 196, 233);
+}
+
+.form__field  input:invalid{
+    border: 1px solid red;
+}
+.form__field  input:valid{
+    border: 1px solid green;
+}

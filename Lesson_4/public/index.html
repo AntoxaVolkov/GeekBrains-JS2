@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lesson 2 - JavaScript 2 level</title>
+    <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+    <div id="app">
+        <div class="tabs">
+            <ul class="tabs__nav">
+                <li class="tabs__nav-item" :class="{active:active === 'tab1'}" ><a @click.prevent="openTab" href="#tab1" class="tabs__nav-link">Обратная связь</a></li>
+                <li class="tabs__nav-item" :class="{active:active === 'tab2'}" ><a @click.prevent="openTab" href="#tab2" class="tabs__nav-link">Вкладка 2</a></li>
+                <li class="tabs__nav-item" :class="{active:active === 'tab3'}" ><a @click.prevent="openTab" href="#tab3" class="tabs__nav-link">Вкладка 3</a></li>
+                <li class="tabs__nav-item" :class="{active:active === 'tab4'}" ><a @click.prevent="openTab" href="#tab4" class="tabs__nav-link">Вкладка 4</a></li>
+            </ul>
+            <div class="tabs__list">
+                <transition name="slide-fade">
+                    <div v-show="active === 'tab1'" class="tabs__tab" key="tab1">
+                        <form class="form" action="#" method="post">
+                            <div class="form__field">
+                                <label for="#iName">Имя</label>
+                                <input v-model="formData.name" type="text" id="iName" pattern="^[a-zA-Zа-яА-ЯёЁ]+$" required>
+                            </div>
+                            <div class="form__field">
+                                <label for="#iTel">Телефон</label>
+                                <input v-model="formData.tel" type="text" id="iTel" pattern="^\+7\(\d{3}\)\d{3}-\d{4}$" required>
+                            </div>
+                            <div class="form__field">                         
+                                <label for="#iEmail">Эл.Почта</label>
+                                <input v-model="formData.email" type="text" id="iEmail" pattern="^[a-zA-Z]+[.-]?[a-zA-Z]+@[a-zA-Z]+.[a-zA-Z]{2,4}$" required>
+                            </div>
+                            <div class="form__field form__field--city">                            
+                                <label for="#iCity">Город</label>
+                                <input @input="findCity" v-model="formData.city" autocomplete=”off” type="text" id="iCyti" required>
+                                <ul v-show="citiesShow" class="cities">
+                                    <li @click="chooseCity(city.name)" class="cities__item" v-for="city in cities">{{ city.name }}</li>
+                                </ul>
+                            </div>
+                            <div class="form__field">                            
+                                <label for="#iText">Текст</label>
+                                <textarea v-model="formData.text" name="mytext" id="iText" rows="5"></textarea>
+                            </div>
+                            <input type="submit" value="Отправить">
+                        </form>
+                    </div>
+                </transition>
+                <transition name="slide-fade">
+                    <div v-show="active === 'tab2'" class="tabs__tab"  key="tab2">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus consequatur eos quas fuga nam? Iure ex temporibus nostrum. Voluptatibus!</p>
+                    </div>
+                </transition>
+                <transition name="slide-fade">
+                    <div v-show="active === 'tab3'" class="tabs__tab"  key="tab3">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime obcaecati iusto sed accusantium reprehenderit vitae similique ipsum in, a architecto pariatur voluptas quam officiis, recusandae provident? Voluptatem corporis vero soluta assumenda cupiditate, doloremque, commodi hic aperiam provident totam, odio voluptatibus cum dolor accusamus possimus tempora quia accusantium distinctio iusto delectus.</p>
+                    </div>
+                </transition>
+                <transition name="slide-fade">
+                    <div v-show="active === 'tab4'" class="tabs__tab"  key="tab4">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus consequatur eos quas fuga nam? Iure ex temporibus nostrum. Voluptatibus!</p>
+                    </div>
+                </transition>
+                    
+                
+            </div>
+        </div>
+        
+    </div>
+    <!-- версия для разработки, включает отображение полезных предупреждений в консоли -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>        
+    <script src="/assets/main.js"></script>
+</body>
+</html>
