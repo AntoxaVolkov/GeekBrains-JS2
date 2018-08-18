@@ -8,29 +8,35 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="first-task">
-        <h1>Задания 1-2</h1>
-        <div class="input">
-            <textarea name="text" id="text" cols="30" rows="10"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex ullam hic animi alias sed esse corporis voluptatibus ab reiciendis nihil. - 'I don't know, that will be written here'. Autem hic nesciunt omnis minus, exercitationem ipsum ad ab amet explicabo!</textarea>
-        </div>
-        <div class="action">
-            <button id="replaceFirst">Заменить V1</button>
-        </div>
-        <p class="output"></p>
-    </div>
 
-    <div class="second-task">
-        <form action="#" method="post">
-            <label for="#iName">Имя</label>
-            <input type="text" id="iName" pattern="^[a-zA-Zа-яА-ЯёЁ]+$" required>
-            <label for="#iTel">Телефон</label>
-            <input type="text" id="iTel" pattern="^\+7\(\d{3}\)\d{3}-\d{4}$" required>
-            <label for="#iEmail">Эл.Почта</label>
-            <input type="text" id="iEmail" pattern="^[a-zA-Z]+[.-]?[a-zA-Z]+@[a-zA-Z]+.[a-zA-Z]{2,4}$" required>
-            <label for="#iText">Текст</label>
-            <textarea name="mytext" id="iText" cols="30" rows="10"></textarea>
-            <input type="submit" value="">
-        </form>
+    <div class="container">
+        <div class="first-task">
+            <h1>Задания 1-2</h1>
+            <div class="input">
+                <textarea name="text" id="text" rows="5">'Lorem ip'sum dolor', sit amet consectetur adipisicing elit. Ex ullam hic animi alias sed esse corporis voluptatibus ab reiciendisnihil. - 'I don't know, that will' be written here.' Autem hic nesciunt omnis minus', exercitationem ipsum ad ab amet explicabo!
+'При'вет мир'
+            </textarea>
+            </div>
+            <div class="action">
+                <button id="replaceFirst">Заменить V1</button>
+                <button id="replaceSecond">Заменить V2</button>
+            </div>
+            <p class="output"></p>
+        </div>
+    
+        <div class="second-task">
+            <form action="#" method="post">
+                <label for="#iName">Имя</label>
+                <input type="text" id="iName" pattern="^[a-zA-Zа-яА-ЯёЁ]+$" required>
+                <label for="#iTel">Телефон</label>
+                <input type="text" id="iTel" pattern="^\+7\(\d{3}\)\d{3}-\d{4}$" required>
+                <label for="#iEmail">Эл.Почта</label>
+                <input type="text" id="iEmail" pattern="^[a-zA-Z]+[.-]?[a-zA-Z]+@[a-zA-Z]+.[a-zA-Z]{2,4}$" required>
+                <label for="#iText">Текст</label>
+                <textarea name="mytext" id="iText" rows="5"></textarea>
+                <input type="submit" value="Отправить">
+            </form>
+        </div>
     </div>
 
     <script src="main.js"></script>

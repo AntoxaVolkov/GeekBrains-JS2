@@ -1,0 +1,39 @@
+.container{
+    width: 400px;
+    margin: 50px auto 0;
+}
+
+.first-task{
+    padding: 10px;
+}
+
+.first-task textarea{
+    width: 100%;
+    resize: none;
+}
+
+.second-task{
+    padding: 10px;
+}
+.second-task label{
+    display: block;
+}
+
+.second-task input{
+    width: 100%;
+}
+.second-task input:focus{
+    outline: none;
+}
+
+.second-task input:invalid{
+    border: 1px solid red;
+}
+.second-task input:valid{
+    border: 1px solid green;
+}
+
+.second-task textarea{
+    width: 100%;
+    resize: none;
+}
