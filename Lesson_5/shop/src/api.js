@@ -18,6 +18,21 @@ const API = {
   removeProductFromCart(user_id, product_id) {
     let str = `?user_id=${user_id}&product_id=${product_id}`;
     return this.$http(`/shop${str}`, "DELETE");
+  },
+  getComments() {
+    return this.$http("/comments");
+  },
+  addComment(comment) {
+    let str = `?text=${comment}`;
+    return this.$http(`/comments${str}`, "POST");
+  },
+  removeComment(comment_id) {
+    let str = `?comment_id=${comment_id}`;
+    return this.$http(`/comments${str}`, "DELETE");
+  },
+  likeComment(comment_id) {
+    let str = `?comment_id=${comment_id}`;
+    return this.$http(`/comments${str}`, "PATCH");
   }
 };
 

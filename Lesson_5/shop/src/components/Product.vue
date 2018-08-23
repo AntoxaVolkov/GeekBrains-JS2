@@ -27,6 +27,8 @@ export default {
 
 <style lang="scss">
 .product {
+  text-align: center;
+
   &__title {
     font-size: 20px;
   }
@@ -45,14 +47,14 @@ export default {
     border: none;
     padding: 5px 10px;
     color: #fff;
-    transition: transform 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out;
 
     &--red {
       background-color: rgb(248, 48, 48);
     }
 
     &:hover {
-      transform: scale(1.1);
+      background-color: #2c3e50;
     }
   }
 }

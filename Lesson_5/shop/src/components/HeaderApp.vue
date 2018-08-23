@@ -4,10 +4,10 @@
       <div class="logo"><a href="/" class="logo__link"><span>Vue</span>Shop</a></div>
       <ul class="nav__list">
         <li class="nav__item">
-          <router-link class="nav__link" to="/">Home</router-link>
+          <router-link class="nav__link" to="/">Products</router-link>
         </li>
         <li class="nav__item">
-          <router-link class="nav__link" to="/about">About</router-link>
+          <router-link class="nav__link" to="/comments">Comments</router-link>
         </li>
       </ul>
       <ShoppingCart class="nav__cart"/>
