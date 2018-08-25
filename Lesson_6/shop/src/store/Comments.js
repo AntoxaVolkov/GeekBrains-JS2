@@ -32,7 +32,7 @@ const Comments = {
 
         commit("setComments", comments);
       } catch (error) {
-        console.log(error);
+        throw error;
       }
     },
 
@@ -41,16 +41,16 @@ const Comments = {
         await API.addComment(comment);
         dispatch("getComments");
       } catch (error) {
-        console.log(error);
+        throw error;
       }
     },
- 
+
     async removeComment({ dispatch }, { comment }) {
       try {
         await API.removeComment(comment.comment_id);
         dispatch("getComments");
       } catch (error) {
-        console.log(error);
+        throw error;
       }
     },
 
@@ -59,7 +59,7 @@ const Comments = {
         let res = await API.likeComment(comment.comment_id);
         commit("likeComment", res);
       } catch (error) {
-        console.log(error);
+        throw error;
       }
     }
   }
