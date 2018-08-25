@@ -16,10 +16,10 @@ const Comments = {
     setComments(state, comments) {
       state.comments = comments;
     },
-    likeComment(state, commentId) {
+    likeComment(state, resComment) {
       for (let comment of state.comments) {
-        if (comment.comment_id === commentId) {
-          ++comment.likes;
+        if (comment.comment_id === resComment.comment_id) {
+          comment.likes = resComment.likes;
           break;
         }
       }
@@ -56,8 +56,8 @@ const Comments = {
 
     async likeComment({ commit }, { comment }) {
       try {
-        await API.likeComment(comment.comment_id);
-        commit("likeComment", comment.comment_id);
+        let res = await API.likeComment(comment.comment_id);
+        commit("likeComment", res);
       } catch (error) {
         console.log(error);
       }
