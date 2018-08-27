@@ -1,5 +1,5 @@
 <template>
-  <div class="product">
+  <div class="product" @dragstart="dragStart" @dragend="dragEnd" :draggable="!product.product_id">
     <h2 class="product__title">{{product.product}}</h2>
     <p class="product__price"><span>{{product.price}}</span> RUB</p>
     <button v-if="!product.product_id" @click="addProduct" class="product__btn">Add to cart</button>
@@ -36,6 +36,14 @@ export default {
             type: "error"
           });
         });
+    },
+    dragStart(ev) {
+      ev.dataTransfer.effectAllowed = "copy";
+      this.$store.commit("setDragProduct", this.product);
+      return true;
+    },
+    dragEnd() {
+      this.$store.commit("clearDragProduct");
     }
   }
 };

@@ -2,7 +2,8 @@ import API from "@/api";
 
 const Cart = {
   state: {
-    products: []
+    products: [],
+    dragProduct: null
   },
   getters: {
     productsInCart(state) {
@@ -10,11 +11,23 @@ const Cart = {
     },
     numberProductsCart(state) {
       return state.products.length;
+    },
+    dragProduct(state) {
+      return state.dragProduct;
+    },
+    hasDragProduct(state) {
+      return !!state.dragProduct;
     }
   },
   mutations: {
     setProducts(state, products) {
       state.products = products;
+    },
+    setDragProduct(state, product) {
+      state.dragProduct = product;
+    },
+    clearDragProduct(state) {
+      state.dragProduct = null;
     }
   },
   actions: {
@@ -38,6 +51,7 @@ const Cart = {
 
     async addProductCart({ dispatch }, { product }) {
       try {
+        console.log(product);
         let user = await dispatch("getUser");
         await API.addProductInCart(user.id, product);
         dispatch("getProductsCart");

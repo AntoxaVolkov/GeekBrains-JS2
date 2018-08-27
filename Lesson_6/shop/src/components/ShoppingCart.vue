@@ -1,5 +1,6 @@
 <template>
   <div class="cart">
+    <DropCart />
     <el-badge :hidden="!numberProductsCart" :value="numberProductsCart" :max="99" class="item">    
       <router-link class="cart__link" to="/cart">
         <img src="../assets/icon-cart.svg" alt="Cart">
@@ -11,9 +12,13 @@
 
 <script>
 import { mapGetters } from "vuex";
+import DropCart from "@/components/DropCart.vue";
 
 export default {
   name: "ShoppingCart",
+  components: {
+    DropCart
+  },
   computed: {
     ...mapGetters(["numberProductsCart"])
   },
